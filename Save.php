@@ -16,6 +16,6 @@ if(isset($_POST['Atualizar']))
 
     $result = $conexao->query($sqlUpdate);
 }
-header('Location: pagina1.php');
+header('Location: index.php');
 
 ?>

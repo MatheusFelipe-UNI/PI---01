@@ -25,7 +25,7 @@
     }
     else
     {
-        header('Location: pagina1.php');
+        header('Location: index.php');
     }
     }
 

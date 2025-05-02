@@ -15,13 +15,13 @@ if (!empty($_GET['id'])) {
         if (isset($_POST['confirmar'])) {
             $sqlDelete = "DELETE FROM produtos WHERE id = $id";
             $conexao->query($sqlDelete);
-            header('Location: pagina1.php');
+            header('Location: index.php');
             exit;
         }
 
         // Se clicou em cancelar
         if (isset($_POST['cancelar'])) {
-            header('Location: pagina1.php');
+            header('Location: index.php');
             exit;
         }
     } else {
@@ -29,7 +29,7 @@ if (!empty($_GET['id'])) {
         exit;
     }
 } else {
-    header('Location: pagina1.php');
+    header('Location: index.php');
     exit;
 }
 ?>
