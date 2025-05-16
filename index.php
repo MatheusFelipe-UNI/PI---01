@@ -14,11 +14,30 @@ $Sql = "SELECT * FROM produtos ORDER BY id ASC"; //seleciona os dados do banco d
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CONTROLE DE ESTOQUE</title>
-    <a href="pagina2.php"> CADASTRO </a>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 30px;">
+    <a href="pagina2.php" style="text-decoration: none; color: blue;">CADASTRO</a>
+    <a href="criar_cesta.php" style="text-decoration: none; color: blue;">GERAR CESTA</a>
+    </div>
+    <div style="text-align:right; margin-right: 30px;">
+    <a href="rela.php" type="button" style="text-decoration: none; color:blue;"> RELATÓRIO </a>
+    </div>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   </head>
   <body>
     <main class="container">
+
+            <?php //cria a mensagem de sucesso, após exito na criação de uma cesta
+        session_start();
+
+        if (isset($_SESSION['mensagem_sucesso'])) {
+            echo "<div style='background: #d4edda; color: #155724; padding: 10px; border: 1px solid #c3e6cb; border-radius: 5px;'>
+                    " . $_SESSION['mensagem_sucesso'] . "
+                </div>";
+            unset($_SESSION['mensagem_sucesso']); 
+        }
+        ?>
+                            
+
         <h1>CONTROLE DE ESTOQUE PARA CESTAS BASICAS</h1> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
         <p></p> 
@@ -32,7 +51,7 @@ $Sql = "SELECT * FROM produtos ORDER BY id ASC"; //seleciona os dados do banco d
         <thead>
             <tr>
             <th scope="col">ID</th> <!-- CAMPO DA ID !-->
-            <th scope="col">Nome</th> <!-- CAMPO DO NOME !-->
+            <th scope="col">Produtos</th> <!-- CAMPO DO NOME !-->
             <th scope="col">Marca</th> <!-- CAMPO DA MARCA !-->
             <th scope="col">Quantidade</th> <!-- CAMPO DA QUANTIDADE !-->
             <th scope="col">Preço</th> <!-- CAMPO DO PREÇO !-->
@@ -50,7 +69,7 @@ $Sql = "SELECT * FROM produtos ORDER BY id ASC"; //seleciona os dados do banco d
                     echo "<td>".$itens['marca']."</td>";
                     echo "<td>".$itens['quantidade']."</td>";
                     echo "<td>".$itens['preco']."</td>";
-                    echo "<td>".$itens['validade']."</td>";
+                    echo "<td>".date("d-m-Y", strtotime($itens['validade']))."</td>";
                     echo "<td>
                         <a class = 'btn btn-sm btn-primary' href='editar.php?id=$itens[id]'> 
                             <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pencil-fill' viewBox='0 0 16 16'>

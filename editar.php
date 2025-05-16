@@ -84,8 +84,8 @@
             <input placeholder="validade" type="date" name="Val" id="Val" value="<?php echo $val ?>" required>  <!-- possibilita inserir a validade do produto no site -->
             </label>
             <p></p>
-            <input type="hidden" name= "id" value="<?php echo $id ?>">
-            <input type="submit" name="Atualizar" id= "Atualizar"> <!-- cria o botão "enviar", do tipo "submit" -->
+            <input type="hidden" name= "id" value="<?php echo $id ?>"> <!-- inclui a id do produto, mas de forma escondida -->
+            <input type="submit" name="Atualizar" id= "Atualizar" value="Atualizar" class="btn btn-primary">  <!-- cria o botão "atualizar", do tipo "submit" -->
         </div>
     </form> 
     </main>

@@ -4,7 +4,7 @@ include_once('CONFIG.php');
 
 if(isset($_POST['Atualizar']))
 {
-    $id = $_POST['id'];
+    $id = $_POST['id']; // inclui a id dos produtos 
     $desc = $_POST['desc']; // inclui a descrição inserida no site ao banco de dados
     $marca = $_POST ['marca']; // inclui a marca inserida no site ao banco de dados
     $quantidade = $_POST ['quantidade']; // inclui a quantidade inserida no site ao banco de dados
