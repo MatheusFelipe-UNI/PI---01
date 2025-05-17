@@ -75,7 +75,7 @@ $result_cestas = $conexao->query($sql_cestas);
             </div>
         <?php endwhile; ?>
         
-        <a href="index.php" class="btn btn-primary mt-3">Voltar</a>
+        <a href="pagina1.php" class="btn btn-primary mt-3">Voltar</a>
         <button class="btn btn-primary mt-3" onclick="window.print()">Imprimir relatório</button>
     </main>
 

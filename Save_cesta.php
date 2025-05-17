@@ -54,7 +54,7 @@ if(isset($_POST["salvar_cesta"])) {
         
         mysqli_commit($conexao);
         $_SESSION['mensagem_sucesso'] = "Cesta criada com sucesso!";
-        header("Location: index.php");
+        header("Location: pagina1.php");
         exit();
     } catch (Exception $e) {
         // Em caso de erro, desfazer todas as operações
